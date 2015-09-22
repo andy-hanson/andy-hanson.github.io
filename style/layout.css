@@ -1,0 +1,91 @@
+html,
+body {
+  min-width: 25rem;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Crete Round;
+  background: repeating-linear-gradient(-45deg, rgba(187,255,221,0.533), rgba(187,255,221,0.533) 0.5rem, rgba(187,221,255,0.533) 0.5rem, rgba(187,221,255,0.533) 1rem);
+}
+a {
+  text-decoration: none;
+  color: #048;
+}
+a.lk {
+  color: #024;
+}
+.inline-list-container p {
+  display: inline;
+}
+ul.inline,
+ul.used {
+  padding: 0;
+  margin: 0 0.5em;
+  display: inline;
+}
+ul.inline li,
+ul.used li {
+  display: inline-block;
+}
+ul.inline li:after,
+ul.used li:after {
+  content: "·";
+  margin: 0 0.25em;
+  color: #888;
+}
+ul.inline li:last-child:after,
+ul.used li:last-child:after {
+  content: none;
+}
+ul.used::before {
+  content: "used: ";
+  color: #ccc;
+}
+body > header {
+  background: rgba(255,255,255,0.933);
+  overflow: auto;
+  text-align: center;
+  box-shadow: 0 0.25rem 0.25rem #888;
+  margin-bottom: 1em;
+}
+body > header #name {
+  font-family: Damion;
+  font-size: 3rem;
+  margin-top: -0.35em;
+  margin-bottom: -0.25em;
+}
+body > header #name a {
+  color: #e60;
+}
+body > header address {
+  display: inline-block;
+  font-size: 125%;
+}
+body > header a {
+  margin: 0 1em;
+  color: #06e;
+}
+body > header a img {
+  width: 1.5em;
+  height: 1.5em;
+  margin-top: -1em;
+}
+body > main h1 {
+  margin: 0;
+  font-family: Patua One;
+  font-weight: normal;
+  color: #800;
+}
+body > main h1 .fa {
+  color: #6a0;
+}
+body > main section {
+  box-shadow: 0.125rem 0.125rem 0.125rem #888;
+  margin: 1em 0.1em;
+  padding: 0.5em;
+  background: rgba(255,255,255,0.8);
+  border-radius: 2em;
+}
+body > main section h1 {
+  margin-left: 0.8em;
+}

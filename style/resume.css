@@ -1,0 +1,40 @@
+main details,
+main table,
+main .content {
+  margin: 0.5em 0;
+}
+main details {
+  border-radius: 0 3em 3em 0;
+}
+main section:last-child {
+  margin-bottom: 0;
+}
+main table {
+  border-spacing: 1.25em 0.25em;
+}
+main summary {
+  width: 100%;
+  font-family: Patua One;
+  display: inline-block;
+}
+main summary div {
+  display: inline-block;
+}
+main summary .what {
+  width: 30%;
+  font-size: 1.5rem;
+}
+main summary .how {
+  width: 25%;
+  font-size: 0.8rem;
+}
+main summary .where {
+  width: 15%;
+  font-size: 0.8rem;
+}
+main summary .when {
+  float: right;
+  color: #040;
+  margin-right: 0;
+  padding-right: 0;
+}

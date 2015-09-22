@@ -1,0 +1,11 @@
+#my-photo {
+  float: right;
+  border-radius: 2em;
+  box-shadow: 0.25em 0.25em 0.25em rgba(238,102,0,0.533);
+  width: 7em;
+  height: 7em;
+}
+#my-photo:hover {
+  transition: transform 1s ease;
+  transform: rotate(-360deg);
+}
