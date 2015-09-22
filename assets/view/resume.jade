@@ -1,0 +1,179 @@
+extends layout
+
+block head
+	title Andy Hanson — Resume
+	link(rel='stylesheet' href='./style/resume.css')
+
+block content
+	+sec('skill', 'star')
+		table
+			tr
+				td proficient in
+				td #[+links('javascript', 'ruby', 'python', 'stylus', 'css', 'jade', 'html')]
+			tr
+				td familiar with
+				td #[+links('scala', 'java', 'c♯', 'glsl', 'sql', 'c++', 'c', 'bash')]
+			tr
+				td web api
+				td #[+links('express', 'jquery', 'web components', 'source maps')]
+			tr
+				td game api
+				td #[+links('canvas', 'webgl', 'three.js', 'lwjgl', 'pygame', 'ogre')]
+			tr
+				td tools
+				td #[+links('linux', 'git', 'github', 'grunt', 'gulp', 'broccoli', 'require.js', 'browserify', 'npm', 'bower')]
+			tr
+				td practice
+				td #[+inline('linting', 'refactoring', 'one-step builds', 'small & pure functions', 'modularity')]
+
+	+sec('work', 'industry')
+		details
+			summary
+				div.what
+					a(href='https://faunadb.com') FaunaDB
+				div.how Associate Software Engineer
+				div.where San Francisco, CA
+				div.when #[time June 2015]-
+
+			p Wrote the #[a(href='https://github.com/faunadb/faunadb-python') Python client].
+			p Worked on the #[a(href='https://faunadb.com') website].
+			+used('python', 'ruby', 'git', 'rails')
+
+		details
+			summary
+				div.what
+					a(href='http://intentsoft.com') IntentSoft
+				div.how Software Analyst & Developer
+				div.where Bellevue, WA
+				div.when #[time Jul 2014]-#[time Mar 2015]
+			p Worked on a layout system.
+			p Rewrote part of system that answered content locations to be closer to purely functional.
+			p Wrote tests, discovered and fixed bugs, and participated in design and implementation of new features.
+			+used('c♯', 'visual studio', 'subversion')
+
+	+sec('school', 'graduation-cap')
+		details
+			summary
+				div.what
+					a(href='http://rpi.edu') Rensselaer
+				div.how GPA: 3.94/4.0
+				div.where Troy, NY
+				div.when #[time 2012]-#[time 2014]
+
+			p No degree.
+
+			h3 Selected courses
+			+inline('advanced computer graphics',
+				'computational physics',
+				'database systems',
+				'language endowed intelligent agents',
+				'intermediate logic',
+				'computability & complexity')
+
+		details
+			summary
+				div.what
+					a(href='https://www.digipen.edu') Digipen
+				div.how GPA: 3.49/4.0
+				div.where Redmond, WA
+				div.when #[time 2011]-#[time 2012]
+
+			p Made one game in ProjectFUN on a team of 3.
+			p Responsible for program, sound, and some graphics.
+
+	+sec('code', 'code')
+		- function my(name) { return 'https://github.com/andy-hanson/' + name }
+		- function ms(name) { return 'https://github.com/mason-lang/' + name }
+
+		details
+			summary
+				div.what
+					a(href='http://mason-lang.org') mason
+				div.when #[time 2014]-
+			p New language compiling to JavaScript.
+			p Language tour on website.
+			p
+				ul.inline
+					li #[a(href="#{ms('mason-compile')}") compiler]
+					li #[a(href="#{ms('msl')}") standard library]
+					li #[a(href="#{ms('mason-doc')}") doc generator]
+					li #[a(href="#{my('esast')}") compiler output helper]
+			+used('babel', 'codemirror', 'web components', 'gulp', 'broccoli', 'bower', 'require.js', 'mocha')
+
+		details
+			summary
+				div.what
+					a(href='https://github.com/ScottTodd/PainterlyRendering') painterly rendering
+				div.when #[time spring 2014]
+			p Team of 2.
+			p Real-time WebGL, with HTML UI to modify renderer properties.
+			p.
+				Renders a 3D particle system of brush stroke sprites which
+				orient and curve along edges of objects and around centers of light.
+			+used('webgl', 'glsl', 'three.js', 'jquery')
+
+		details
+			summary
+				div.what
+					a(href="#{my('logic-online')}") logic online
+				div.when #[time spring 2014]
+			p Deduction language (shared by server and client) and exercises to learn it.
+			p Inference and equality rules are asserted or proved within the language.
+			p Exercises are stored as YAML files.
+			+used('codemirror', 'express', 'browserify', 'codo')
+
+		details
+			summary
+				div.what
+					a(href='https://github.com/jcarrelli/csci-4440-polo-jeans') polo jeans
+				div.when #[time fall 2013]
+			p Team of 4.
+			p Lead meetings; worked on architechture, build system, and media; wrote GameObject scripting, including multiple inheritance.
+			+used('webgl', 'require.js', 'jquery', 'cake', 'jasmine', 'naturaldocs')
+
+		details
+			summary
+				div.what english parser
+				div.when #[time fall 2013]
+			p Team of 6.
+			p A restaurant-recommending-robot.
+			p Wrote text to dependency grammar part of pileline.
+			p Wrote onomasticon and lexicon as JSON data.
+			+used('scala')
+
+		details
+			summary
+				div.what
+					a(href='http://sahas3.myrpi.org/pendulum/game.php') ghost control
+				div.when #[time summer 2013]
+			p Worked for control systems researchers.
+			p Web game that tracks user and saves/loads ghost data from server.
+			+used('canvas', 'coffeescript', 'php', 'scala')
+
+		details
+			summary
+				div.what
+					a(href="#{my('wahoo')}") wahoo
+				div.when #[time fall 2012]
+			p 2D game engine featuring dynamic lighting, loose quadtree collision detection, and type-based (via reflection), state-based GameObject scripting.
+			+used('scala', 'lwjgl')
+
+		details
+			summary
+				div.what games
+				div.when #[time 2009]-#[time 2013]
+
+			ul
+				li #[a(href='https://andy-hanson.github.io/threesome-thriller') thrifty threesome thriller]
+				li
+					a(href="#{my('mangos-caffeinated-hilarity')}")
+						| mango's caffeinated hilarity
+				li #[a(href="#{my('monis')}") monis]
+				li #[a(href="#{my('monis-xtreme')}") monis xtreme]
+				li #[a(href="#{my('snake')}") snake]
+				li many more...
+
+			p Many small games.
+			p One game in OpenGL, one in OGRE, both with PyGame.
+			p Unfinished game in Scala engine.
+			+used('applet', 'pygame', 'ogre', 'canvas', 'scala', 'lwjgl')

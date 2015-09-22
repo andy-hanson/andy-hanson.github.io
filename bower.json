@@ -1,0 +1,6 @@
+{
+	"name": "resume",
+	"dependencies": {
+		"details-shim": "tyleruebele/details-shim"
+	}
+}

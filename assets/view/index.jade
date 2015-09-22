@@ -1,0 +1,26 @@
+extends layout
+
+block head
+	title Andy Hanson
+	link(rel='stylesheet' href='./style/index.css')
+
+block content
+	section
+		image#my-photo(src='./me.png')
+		h1 #[+icon('heart')] me
+
+		div.content
+			p I write software!
+			.inline-list-container
+				p Favorite:
+				ul.inline
+					li #[a(href='https://www.youtube.com/watch?v=Zt43W6eRhp4') song]
+					li #[a(href='https://www.youtube.com/watch?v=znbJI7TP_zY') movie]
+					li #[a(href='http://www.nintendo.com/games/detail/q1gNQNlKvXRq4LNu9mEdmcXmksSbnduz') game]
+					li #[a(href='https://gusvanhorn.blogspot.com/') blog]
+					li #[a(href='http://www.ssbwiki.com/Peach') smasher]
+					li #[a(href='http://bulbapedia.bulbagarden.net/wiki/Wobbuffet_(Pokémon)') Pokémon]
+
+			p.
+				I live near San Francisco.
+				More than happy to move should the need arise.
