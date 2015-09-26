@@ -1,0 +1,88 @@
+-
+	var tech_links = {
+		applet: '//en.wikipedia.org/wiki/Java_applet',
+		bash: '//en.wikipedia.org/wiki/Bash_(Unix_shell)',
+		bower: '//bower.io',
+		broccoli: '//github.com/broccolijs/broccoli',
+		browserify: '//browserify.org',
+		c: '//en.wikipedia.org/wiki/C_(programming_language)',
+		'c++': '//isocpp.org/',
+		'c♯': '//en.wikipedia.org/wiki/C_Sharp_(programming_language)',
+		cake: '//coffeescript.org/documentation/docs/cake',
+		canvas: '//developer.mozilla.org/en-US/docs/Web/API/Canvas_API',
+		codemirror: '//codemirror.net',
+		codo: '//github.com/coffeedoc/codo',
+		coffeescript: '//coffeescript.org',
+		css: '//www.w3.org/Style/CSS/',
+		es6: '//github.com/lukehoban/es6features',
+		express: '//expressjs.com',
+		git: '//git-scm.com',
+		github: '//github.com',
+		glsl: '//en.wikipedia.org/wiki/OpenGL_Shading_Language',
+		grunt: '//gruntjs.com',
+		gulp: '//gulpjs.com',
+		html: '//en.wikipedia.org/wiki/HTML',
+		node: '//nodejs.org',
+		jade: '//jade-lang.com',
+		java: '//www.java.com',
+		javascript: '//developer.mozilla.org/en-US/docs/Web/javascript',
+		jasmine: '//jasmine.github.io',
+		jquery: '//jquery.com',
+		jstransformers: '//github.com/jstransformers/jstransformer',
+		linux: '//www.linuxmint.com',
+		lwjgl: '//lwjgl.org',
+		mocha: '//mochajs.org',
+		naturaldocs: '//naturaldocs.org',
+		npm: '//npmjs.com',
+		ogre: '//ogre3d.org',
+		php: '//php.net',
+		pygame: '//pygame.org',
+		python: '//python.org',
+		rails: '//rubyonrails.org',
+		'require.js': '//requirejs.org',
+		ruby: '//ruby-lang.org',
+		scala: '//scala-lang.org',
+		'source maps': '//www.html5rocks.com/en/tutorials/developertools/sourcemaps/',
+		sql: '//en.wikipedia.org/wiki/SQL',
+		stylus: '//learnboost.github.io/stylus',
+		subversion: '//subversion.apache.org',
+		'three.js': '//threejs.org',
+		'visual studio': '//www.visualstudio.com',
+		'web components': '//webcomponents.org',
+		webgl: '//en.wikipedia.org/wiki/WebGL'
+	}
+	function tech_link(name) {
+		if (!(name in tech_links))
+			throw new Error('No URL for: ' + name)
+		return tech_links[name]
+	}
+
+mixin lk(name)
+	a.lk(href='#{tech_link(name)}')= name
+
+mixin lilk(name)
+	li
+		+lk(name)
+
+mixin inline(...names)
+	ul.inline
+		each name in names
+			li= name
+
+mixin used(...names)
+	ul.used
+		each name in names
+			+lilk(name)
+
+mixin links(...names)
+	ul.inline
+		each name in names
+			+lilk(name)
+
+mixin icon(iconName)
+	i(class='fa fa-#{iconName}')
+
+mixin sec(name, iconName)
+	section
+		h1 #[+icon(iconName)] #{name}
+		block

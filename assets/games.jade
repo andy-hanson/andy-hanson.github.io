@@ -1,0 +1,16 @@
+extends _layout
+
+block head
+	title Andy Hanson — Games
+	link(rel='stylesheet' href='./style/games.css')
+
+block content
+	section
+		h1 #[+icon('rocket')] play
+
+		#games-list
+			a(href='thrifty-threesome-thriller') thrifty threesome thriller
+			a(href='doppler-effect') doppler effect
+			a(href='slots') slots
+
+		p All games use #[a(href='//mason-lang.org') mason] and #[a(href='//dum-build.org') dum].

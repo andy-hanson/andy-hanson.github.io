@@ -1,4 +1,4 @@
-extends layout
+extends _layout
 
 block head
 	title Andy Hanson — Resume
@@ -30,19 +30,19 @@ block content
 		details
 			summary
 				div.what
-					a(href='https://faunadb.com') FaunaDB
+					a(href='//faunadb.com') FaunaDB
 				div.how Associate Software Engineer
 				div.where San Francisco, CA
 				div.when #[time June 2015]-
 
-			p Wrote the #[a(href='https://github.com/faunadb/faunadb-python') Python client].
-			p Worked on the #[a(href='https://faunadb.com') website].
+			p Wrote the #[a(href='//github.com/faunadb/faunadb-python') Python client].
+			p Worked on the #[a(href='//faunadb.com') website].
 			+used('python', 'ruby', 'git', 'rails')
 
 		details
 			summary
 				div.what
-					a(href='http://intentsoft.com') IntentSoft
+					a(href='//intentsoft.com') IntentSoft
 				div.how Software Analyst & Developer
 				div.where Bellevue, WA
 				div.when #[time Jul 2014]-#[time Mar 2015]
@@ -55,7 +55,7 @@ block content
 		details
 			summary
 				div.what
-					a(href='http://rpi.edu') Rensselaer
+					a(href='//rpi.edu') Rensselaer
 				div.how GPA: 3.94/4.0
 				div.where Troy, NY
 				div.when #[time 2012]-#[time 2014]
@@ -73,7 +73,7 @@ block content
 		details
 			summary
 				div.what
-					a(href='https://www.digipen.edu') Digipen
+					a(href='//www.digipen.edu') Digipen
 				div.how GPA: 3.49/4.0
 				div.where Redmond, WA
 				div.when #[time 2011]-#[time 2012]
@@ -82,28 +82,40 @@ block content
 			p Responsible for program, sound, and some graphics.
 
 	+sec('code', 'code')
-		- function my(name) { return 'https://github.com/andy-hanson/' + name }
-		- function ms(name) { return 'https://github.com/mason-lang/' + name }
+		- function my(name) { return '//github.com/andy-hanson/' + name }
+		- function ms(name) { return '//github.com/mason-lang/' + name }
+		- function dum(name) { return `//github.com/dum-build/${name}` }
 
 		details
 			summary
 				div.what
-					a(href='http://mason-lang.org') mason
+					a(href='//dum-build.org') dum
+				div.when #[time 2015]-
+			p Simple build system. No build script, no plugins.
+			p
+				ul.inline
+					li #[a(href="#{dum('dum-web-template')}") template]
+					li #[a(href="#{dum('machine-that-goes-bing')}") noise maker]
+			+used('node', 'jstransformers')
+
+		details
+			summary
+				div.what
+					a(href='//mason-lang.org') mason
 				div.when #[time 2014]-
 			p New language compiling to JavaScript.
-			p Language tour on website.
 			p
 				ul.inline
 					li #[a(href="#{ms('mason-compile')}") compiler]
 					li #[a(href="#{ms('msl')}") standard library]
 					li #[a(href="#{ms('mason-doc')}") doc generator]
 					li #[a(href="#{my('esast')}") compiler output helper]
-			+used('babel', 'codemirror', 'web components', 'gulp', 'broccoli', 'bower', 'require.js', 'mocha')
+			+used('codemirror', 'web components', 'gulp', 'broccoli', 'bower', 'require.js', 'mocha')
 
 		details
 			summary
 				div.what
-					a(href='https://github.com/ScottTodd/PainterlyRendering') painterly rendering
+					a(href='//github.com/ScottTodd/PainterlyRendering') painterly rendering
 				div.when #[time spring 2014]
 			p Team of 2.
 			p Real-time WebGL, with HTML UI to modify renderer properties.
@@ -125,7 +137,7 @@ block content
 		details
 			summary
 				div.what
-					a(href='https://github.com/jcarrelli/csci-4440-polo-jeans') polo jeans
+					a(href='//github.com/jcarrelli/csci-4440-polo-jeans') polo jeans
 				div.when #[time fall 2013]
 			p Team of 4.
 			p Lead meetings; worked on architechture, build system, and media; wrote GameObject scripting, including multiple inheritance.
@@ -144,7 +156,7 @@ block content
 		details
 			summary
 				div.what
-					a(href='http://sahas3.myrpi.org/pendulum/game.php') ghost control
+					a(href='//sahas3.myrpi.org/pendulum/game.php') ghost control
 				div.when #[time summer 2013]
 			p Worked for control systems researchers.
 			p Web game that tracks user and saves/loads ghost data from server.
@@ -164,7 +176,7 @@ block content
 				div.when #[time 2009]-#[time 2013]
 
 			ul
-				li #[a(href='https://andy-hanson.github.io/threesome-thriller') thrifty threesome thriller]
+				li #[a(href='//andy-hanson.github.io/threesome-thriller') thrifty threesome thriller]
 				li
 					a(href="#{my('mangos-caffeinated-hilarity')}")
 						| mango's caffeinated hilarity
