@@ -1,3 +1,5 @@
+@import '//fonts.googleapis.com/css?family=Patua+One|Crete+Round|Damion';
+@import '//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css';
 html,
 body {
   min-width: 25rem;
@@ -5,7 +7,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Crete Round;
-  background: repeating-linear-gradient(-45deg, rgba(187,255,221,0.533), rgba(187,255,221,0.533) 0.5rem, rgba(187,221,255,0.533) 0.5rem, rgba(187,221,255,0.533) 1rem);
+  background: repeating-linear-gradient(-45deg, rgba(187,255,238,0.267), rgba(187,255,238,0.267) 0.5rem, rgba(187,238,255,0.267) 0.5rem, rgba(187,238,255,0.267) 1rem);
 }
 a {
   text-decoration: none;
@@ -42,7 +44,7 @@ ul.used::before {
   color: #ccc;
 }
 body > header {
-  background: rgba(255,255,255,0.933);
+  background: #fff;
   overflow: auto;
   text-align: center;
   box-shadow: 0 0.25rem 0.25rem #888;
@@ -57,18 +59,16 @@ body > header #name {
 body > header #name a {
   color: #e60;
 }
-body > header address {
+body > header nav {
+  margin-top: -1em;
+}
+body > header nav a {
   display: inline-block;
   font-size: 125%;
-}
-body > header a {
+  font-style: normal;
+  font-weight: bold;
   margin: 0 1em;
   color: #06e;
-}
-body > header a img {
-  width: 1.5em;
-  height: 1.5em;
-  margin-top: -1em;
 }
 body > main h1 {
   margin: 0;
@@ -83,7 +83,7 @@ body > main section {
   box-shadow: 0.125rem 0.125rem 0.125rem #888;
   margin: 1em 0.1em;
   padding: 0.5em;
-  background: rgba(255,255,255,0.8);
+  background: #fff;
   border-radius: 2em;
 }
 body > main section h1 {
