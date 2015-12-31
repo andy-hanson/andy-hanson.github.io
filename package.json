@@ -5,6 +5,5 @@
 		"dum": "dum-build/dum",
 		"jstransformer-jade": "",
 		"jstransformer-stylus": ""
-	},
-	"license": "WTFPL"
+	}
 }

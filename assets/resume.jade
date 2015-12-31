@@ -9,10 +9,10 @@ block content
 		table
 			tr
 				td proficient in
-				td #[+links('javascript', 'ruby', 'python', 'stylus', 'css', 'jade', 'html')]
+				td #[+links('typescript', 'javascript', 'c♯', 'python', 'ruby', 'stylus', 'css', 'jade', 'html')]
 			tr
 				td familiar with
-				td #[+links('scala', 'java', 'c♯', 'glsl', 'sql', 'c++', 'c', 'bash')]
+				td #[+links('scala', 'java', 'glsl', 'sql', 'c++', 'c', 'bash')]
 			tr
 				td web api
 				td #[+links('express', 'jquery', 'web components', 'source maps')]
@@ -35,9 +35,9 @@ block content
 				div.where San Francisco, CA
 				div.when #[time June 2015]-
 
-			p Wrote the #[a(href='//github.com/faunadb/faunadb-python') Python client].
+			p Wrote #[a(href='//github.com/faunadb/faunadb-python') Python], #[a(href='//github.com/faunadb/faunadb-js') JavaScript], and #[a(href='//github.com/faunadb/faunadb-csharp') C♯] clients.
 			p Worked on the #[a(href='//faunadb.com') website].
-			+used('python', 'ruby', 'git', 'rails')
+			+used('python', 'c♯', 'typescript', 'ruby', 'git', 'rails')
 
 		details
 			summary
@@ -82,21 +82,12 @@ block content
 			p Responsible for program, sound, and some graphics.
 
 	+sec('code', 'code')
-		- function my(name) { return '//github.com/andy-hanson/' + name }
-		- function ms(name) { return '//github.com/mason-lang/' + name }
-		- function dum(name) { return `//github.com/dum-build/${name}` }
-
-		details
-			summary
-				div.what
-					a(href='//dum-build.org') dum
-				div.when #[time 2015]-
-			p Simple build system. No build script, no plugins.
-			p
-				ul.inline
-					li #[a(href="#{dum('dum-web-template')}") template]
-					li #[a(href="#{dum('machine-that-goes-bing')}") noise maker]
-			+used('node', 'jstransformers')
+		- function my(name) { return `//github.com/andy-hanson/${name}` }
+		mixin links(project, links)
+			ul.inline
+				for link in links
+					li
+						a(href="//github.com/#{project}/#{link[1]}")= link[0]
 
 		details
 			summary
@@ -105,12 +96,44 @@ block content
 				div.when #[time 2014]-
 			p New language compiling to JavaScript.
 			p
-				ul.inline
-					li #[a(href="#{ms('mason-compile')}") compiler]
-					li #[a(href="#{ms('msl')}") standard library]
-					li #[a(href="#{ms('mason-doc')}") doc generator]
-					li #[a(href="#{my('esast')}") compiler output helper]
-			+used('codemirror', 'web components', 'gulp', 'broccoli', 'bower', 'require.js', 'mocha')
+				+links('mason-lang', [
+					['compiler', 'mason-compile'],
+					['standard library', 'msl'],
+					['doc generator', 'mason-doc'],
+					['syntax', 'mason-atom']
+				])
+			+used('typescript', 'codemirror', 'web components', 'gulp', 'broccoli', 'bower', 'require.js', 'mocha')
+
+		details
+			summary
+				div.what
+					a(href='//dum-build.org') dum
+				div.when #[time 2015]-
+			p Simple build system. No build script, no plugins.
+			p
+				+links('dum-build', [
+					['engine', 'dum'],
+					['web template', 'dum-web-template'],
+					['library template', 'dum-library-template'],
+					['noise maker', 'machine-that-goes-bing']
+				])
+			+used('node', 'jstransformers')
+
+		details
+			summary
+				div.what
+					a(href='//github.com/esast') esast
+				div.when #[time 2015]-
+			p Type-safe JavaScript AST.
+			p
+				+links('esast', [
+					['tree', 'esast'],
+					['util', 'esast-create-util'],
+					['convert from untyped', 'esast-from-json'],
+					['render', 'esast-render-fast'],
+					['op', 'option type']
+				])
+			+used('typescript', 'source maps')
 
 		details
 			summary
