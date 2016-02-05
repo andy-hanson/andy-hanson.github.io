@@ -1,20 +1,22 @@
 -
-	var tech_links = {
+	var techLinks = {
 		applet: '//en.wikipedia.org/wiki/Java_applet',
+		babel: '//babeljs.io',
 		bash: '//en.wikipedia.org/wiki/Bash_(Unix_shell)',
 		bower: '//bower.io',
 		broccoli: '//github.com/broccolijs/broccoli',
 		browserify: '//browserify.org',
 		c: '//en.wikipedia.org/wiki/C_(programming_language)',
-		'c++': '//isocpp.org/',
+		'c++': '//isocpp.org',
 		'c♯': '//en.wikipedia.org/wiki/C_Sharp_(programming_language)',
 		cake: '//coffeescript.org/documentation/docs/cake',
 		canvas: '//developer.mozilla.org/en-US/docs/Web/API/Canvas_API',
 		codemirror: '//codemirror.net',
 		codo: '//github.com/coffeedoc/codo',
 		coffeescript: '//coffeescript.org',
-		css: '//www.w3.org/Style/CSS/',
-		es6: '//github.com/lukehoban/es6features',
+		css: '//www.w3.org/Style/CSS',
+		esdoc: '//esdoc.org',
+		eslint: '//eslint.org',
 		express: '//expressjs.com',
 		git: '//git-scm.com',
 		github: '//github.com',
@@ -31,35 +33,55 @@
 		jstransformers: '//github.com/jstransformers/jstransformer',
 		linux: '//www.linuxmint.com',
 		lwjgl: '//lwjgl.org',
+		'mac os x': '//apple.com/osx',
 		mocha: '//mochajs.org',
 		naturaldocs: '//naturaldocs.org',
 		npm: '//npmjs.com',
+		nunit: '//nunit.org',
 		ogre: '//ogre3d.org',
 		php: '//php.net',
+		pycharm: '//jetbrains.com/pycharm',
 		pygame: '//pygame.org',
+		pylint: '//pylint.org',
 		python: '//python.org',
 		rails: '//rubyonrails.org',
+		rdoc: '//rdoc.rubyforge.org',
 		'require.js': '//requirejs.org',
+		resharper: '//jetbrains.com/resharper',
+		rubocop: '//github.com/bbatsov/rubocop',
 		ruby: '//ruby-lang.org',
 		scala: '//scala-lang.org',
-		'source maps': '//www.html5rocks.com/en/tutorials/developertools/sourcemaps/',
+		slack: '//slack.com',
+		'source maps': '//www.html5rocks.com/en/tutorials/developertools/sourcemaps',
+		'sphinx-doc': '//sphinx-doc.org',
 		sql: '//en.wikipedia.org/wiki/SQL',
 		stylus: '//learnboost.github.io/stylus',
 		subversion: '//subversion.apache.org',
 		'three.js': '//threejs.org',
+		tortoisesvn: '//tortoisesvn.net',
+		tslint: '//github.com/palantir/tslint',
 		typescript: '//typescriptlang.org',
+		virtualenv: '//github.com/pypa/virtualenv',
 		'visual studio': '//www.visualstudio.com',
+		'visualsvn': '//visualsvn.com/visualsvn',
+		vscode: '//code.visualstudio.com',
 		'web components': '//webcomponents.org',
-		webgl: '//en.wikipedia.org/wiki/WebGL'
+		webgl: '//en.wikipedia.org/wiki/WebGL',
+		windows: '//windows.microsoft.com',
+		'xamarin studio': '//xamarin.com/studio'
 	}
-	function tech_link(name) {
-		if (!(name in tech_links))
-			throw new Error('No URL for: ' + name)
-		return tech_links[name]
+	function techLink(name) {
+		if (!(name in techLinks))
+			throw new Error(`No URL for: ${name}`)
+		return techLinks[name]
 	}
 
 mixin lk(name)
-	a.lk(href='#{tech_link(name)}')= name
+	if name instanceof Array
+		- var relatedNames = name.slice(1).map(_ => `<a href='${techLink(_)}'>${_}</a>`).join(', ')
+		span #[a.lk(href='#{techLink(name[0])}')= name[0]] (!{relatedNames})
+	else
+		a.lk(href='#{techLink(name)}')= name
 
 mixin lilk(name)
 	li

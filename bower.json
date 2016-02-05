@@ -1,0 +1,6 @@
+{
+	"name": "andy-hanson.me",
+	"dependencies": {
+		"details-shim": "tyleruebele/details-shim"
+	}
+}
