@@ -6,6 +6,11 @@ main .content {
 main details {
   border-radius: 0 3em 3em 0;
 }
+main #details-toggle {
+  background: rgba(255,255,136,0.8);
+  border-color: transparent;
+  border-radius: 1em;
+}
 main section:last-child {
   margin-bottom: 0;
 }
