@@ -1,45 +1,78 @@
-main details,
-main table,
-main .content {
+html,
+body {
+  background: repeating-linear-gradient(-45deg, #e8e8e8, #e8e8e8 0.5rem, #eee 0.5rem, #eee 1rem);
+}
+body > main .head {
+  background: #fff;
+  display: flex;
+}
+body > main .head > address {
+  font-style: normal;
+  flex-grow: 1;
+  vertical-align: middle;
+}
+body > main .head > address#home {
+  text-align: center;
+}
+body > main .head > address#home p {
+  margin: 0;
+}
+body > main .head > address#phone {
+  text-align: right;
+}
+body > main .head > address#email,
+body > main .head > address#phone {
+  padding-top: 0.5em;
+}
+body > main details,
+body > main table,
+body > main .content {
   margin: 0.5em 0;
 }
-main details {
+body > main details {
   border-radius: 0 3em 3em 0;
 }
-main #details-toggle {
-  background: rgba(255,255,136,0.8);
-  border-color: transparent;
+body > main #details-toggle {
+  background: #eee;
+  border-color: #0ff;
+  border-width: 2px;
   border-radius: 1em;
 }
-main section:last-child {
+body > main section:last-child {
   margin-bottom: 0;
 }
-main table {
+body > main table {
   border-spacing: 1.25em 0.25em;
 }
-main summary {
+body > main summary {
   width: 100%;
   font-family: Patua One;
   display: inline-block;
 }
-main summary div {
+body > main summary div {
   display: inline-block;
 }
-main summary .what {
+body > main summary .what {
   width: 30%;
   font-size: 1.5rem;
 }
-main summary .how {
+body > main summary .how {
   width: 25%;
   font-size: 0.8rem;
 }
-main summary .where {
+body > main summary .where {
   width: 15%;
   font-size: 0.8rem;
 }
-main summary .when {
+body > main summary .when {
   float: right;
-  color: #040;
+  color: #444;
   margin-right: 0;
   padding-right: 0;
+}
+body > main h1 {
+  color: #000;
+}
+body > main h1 .fa {
+  color: #aaa;
 }
