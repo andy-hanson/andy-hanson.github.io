@@ -6,35 +6,32 @@ block head
 	script(src='script/resume.js')
 
 block content
-
 	.head
-		address#email
-			a(href='mailto:andy.pj.hanson@gmail.com') andy.pj.hanson@gmail.com
-		address#home
-			p 1355 Creekside Dr., #112
-			p Walnut Creek, CA 94596
-		address#phone
-			a(href='tel:7034022284') (703) 402-2284
+		div
+			.part
+				a(href='tel:7034022284') (703) 402-2284
+			.part
+				a(href='mailto:andy.pj.hanson@gmail.com') andy.pj.hanson@gmail.com
+		div
+			.part
+				a(href='//github.com/andy-hanson/pdf-resume/raw/master/LaTeX/Andy-Hanson.pdf') View as PDF
+			.part
+				button#details-toggle Open/close all sections
 
 	+sec('skill', 'star')
 		table
 			tr
 				td proficient in
-				td #[+links(['javascript', 'typescript', 'coffeescript', 'babel'], 'c♯', 'python', 'ruby', ['html', 'jade'])]
+				td #[+links(['javascript', 'typescript', 'coffeescript', 'babel'], 'c♯', 'python')]
 			tr
 				td familiar with
-				td #[+links(['java', 'scala'], ['css', 'stylus'], 'rails', 'c++', 'c', 'glsl', 'bash', 'sql')]
+				td #[+links(['java', 'scala'], 'ruby', 'c++', 'c', 'glsl', ['html', 'jade'], ['css', 'stylus'])]
 			tr
 				td tools
-				td #[+links('linux', 'mac os x', 'windows', 'git', 'github', 'gulp', 'require.js', 'browserify', 'npm', 'bower')]
+				td #[+links('git', 'github', 'gulp', 'require.js', 'browserify', 'npm', 'bower')]
 			tr
-				td practice
-				td #[+inline('testing', 'linting', 'documenting', 'one-step builds', 'small & pure functions', 'refactoring', 'modularity')]
-			tr
-				td libraries
-				td #[+links('express', 'web components', 'canvas', 'webgl', 'three.js', 'jquery')]
-
-	button#details-toggle Open/close all sections
+				td practices
+				td #[+inline('testing', 'linting', 'documenting', 'small & pure functions', 'refactoring', 'modularity')]
 
 	+sec('work', 'industry')
 		details
@@ -43,11 +40,12 @@ block content
 					a(href='//faunadb.com') FaunaDB
 				div.how Associate Software Engineer
 				div.where San Francisco, CA
-				div.when #[time June 2015]-#[time January 2016]
+				div.when #[time Jun 2015]-#[time Jan 2016]
 
-			p Work on clients for a new database for #[a(href='//github.com/faunadb/faunadb-python') Python], #[a(href='//github.com/faunadb/faunadb-ruby') Ruby], #[a(href='//github.com/faunadb/faunadb-js') JavaScript], and C♯ (not yet public).
-			p Worked on the #[a(href='//faunadb.com') website].
-			+used('mac os x', 'python', 'ruby', 'javascript', 'c♯', 'git', 'github', 'rails', 'virtualenv', 'mocha', 'nunit', 'rubocop', 'pylint', 'eslint', 'babel', 'rdoc', 'sphinx-doc', 'esdoc', 'pycharm', 'vscode', 'visual studio', 'xamarin studio', 'slack')
+			p Worked on clients for a new database for #[a(href='//github.com/faunadb/faunadb-python') python], #[a(href='//github.com/faunadb/faunadb-ruby') ruby], #[a(href='//github.com/faunadb/faunadb-js') javascript], and c♯ (not yet public).
+			p Clients include REST client, error handling, (de)serialization, query language, and ORM, with tests and documentation. C♯ and javascript clients are asynchronous.
+			p Worked on the #[a(href='//faunadb.com') website], a #[+lk('rails')] application built with FaunaDB. Work was mostly server-side.
+			+used('mac os x', 'python', 'ruby', 'javascript', 'c♯', 'git', 'github', 'rails', 'virtualenv', 'mocha', 'nunit', 'rubocop', 'pylint', 'eslint', 'babel', 'rdoc', 'sphinx-doc', 'esdoc', 'pycharm', 'vscode', 'visual studio', 'xamarin studio', 'slack', 'ansible')
 
 		details
 			summary
@@ -55,9 +53,8 @@ block content
 					a(href='//intentsoft.com') IntentSoft
 				div.how Software Analyst & Developer
 				div.where Bellevue, WA
-				div.when #[time July 2014]-#[time March 2015]
-			p Worked on a layout system.
-			p System takes as input a tree of content nodes (analagous to nodes in an HTML document) and outputs a tree of graphical nodes (which have exact locations).
+				div.when #[time Jul 2014]-#[time Mar 2015]
+			p Worked on a layout system. System takes as input a tree of content nodes (analagous to #[+lk('DOM')] nodes) and outputs a tree of graphical nodes (which have exact locations).
 			p Rewrote part of system that queried content locations to be closer to purely functional.
 			p Wrote tests, discovered and fixed bugs, and participated in design and implementation of new features.
 			+used('windows', 'c♯', 'visual studio', ['subversion', 'tortoisesvn', 'visualsvn'], 'resharper')
@@ -66,13 +63,12 @@ block content
 		details
 			summary
 				div.what
-					a(href='//rpi.edu') Rensselaer
+					a(href='//rpi.edu' title='Rensselaer Polytechnic Institute') Rensselaer
 				div.how GPA: 3.94/4.0
 				div.where Troy, NY
 				div.when #[time 2012]-#[time 2014]
 
 			p Pending Bachelor of Science in Computer Science.
-			p Planning to use a community college to fill in missing credits.
 
 			h3 Selected courses
 			+inline(
@@ -86,7 +82,7 @@ block content
 		details
 			summary
 				div.what
-					a(href='//www.digipen.edu') Digipen
+					a(href='//www.digipen.edu' title='Digipen institute of Technology') Digipen
 				div.how GPA: 3.49/4.0
 				div.where Redmond, WA
 				div.when #[time 2011]-#[time 2012]
@@ -111,11 +107,14 @@ block content
 
 		details
 			summary
-				div.what
+				.what
 					a(href='//mason-lang.org') mason
-				div.when #[time 2014]-
-			p New language compiling to JavaScript.
-			p Example projects #[a(href='games') here].
+				.type programming language
+				.when #[time 2014]-
+			p.
+				New language compiling to javascript.
+				Language tour #[a(href='//mason-lang.org/tour/') here].
+			p Example project #[a(href='//github.com/andy-hanson/thrifty-threesome-thriller') here].
 			p
 				+links('mason-lang', [
 					['compiler', 'mason-compile'],
@@ -127,10 +126,12 @@ block content
 
 		details
 			summary
-				div.what
+				.what
 					a(href='//github.com/esast') esast
-				div.when #[time 2015]-
-			p Type-safe (via #[+lk('typescript')]) JavaScript AST.
+				.type javascript AST
+				.when #[time 2015]-
+			p JavaScript AST, made type-safe with #[+lk('typescript')].
+			p Renders to javascript code with #[+lk('source maps')].
 			p Used by Mason.
 			p
 				+links('esast', [
@@ -144,14 +145,13 @@ block content
 
 		details
 			summary
-				div.what
+				.what
 					a(href='//dum-build.org') dum
-				div.when #[time 2015]-
-			p Simple build system. No build script necessary.
+				.type build system
+				.when #[time 2015]-
+			p Simple build system: translates files from e.g. #[+lk('jade')] to html, or #[+lk('coffeescript')] to javascript. No build script necessary.
 			p Instead of specialized plugins, uses #[+lk('jstransformers')].
-			p Completely asynchronous.
-			p Written in Mason.
-			p Used for this site.
+			p Completely asynchronous. Written in Mason. Used for this site.
 			p
 				+links('dum-build', [
 					['engine', 'dum'],
@@ -163,11 +163,12 @@ block content
 
 		details
 			summary
-				div.what
+				.what
 					a(href='//github.com/ScottTodd/PainterlyRendering') painterly rendering
-				div.when #[time spring 2014]
+				.type webgl rendering experiment
+				.when #[time spring 2014]
 			p Team of 2.
-			p Real-time WebGL, with HTML UI to modify renderer properties.
+			p Real-time #[+lk('webgl')], with HTML UI to modify renderer properties.
 			p.
 				Renders a 3D particle system of brush stroke sprites which
 				orient and curve along edges of objects and around centers of light.
@@ -175,9 +176,10 @@ block content
 
 		details
 			summary
-				div.what
+				.what
 					a(href="#{my('logic-online')}") logic online
-				div.when #[time spring 2014]
+				.type online logic practice
+				.when #[time spring 2014]
 			p Deduction language (shared by server and client) and exercises to learn it.
 			p Inference and equality rules are asserted or proved within the language.
 			p Exercises are stored as YAML files.
@@ -185,45 +187,48 @@ block content
 
 		details
 			summary
-				div.what
-					a(href='//github.com/jcarrelli/csci-4440-polo-jeans') polo jeans game engine
-				div.when #[time fall 2013]
+				.what
+					a(href='//github.com/jcarrelli/csci-4440-polo-jeans') polo jeans
+				.type webgl 2D game engine
+				.when #[time fall 2013]
 			p Team of 4.
-			p 2D game engine written in #[+lk('webgl')].
 			p Lead meetings; worked on architechture, build system, and media; wrote GameObject scripting, including multiple inheritance.
 			+used('webgl', 'require.js', 'jquery', 'cake', 'jasmine', 'naturaldocs')
 
 		details
 			summary
-				div.what english parser
-				div.when #[time fall 2013]
+				.what LEIA
+				.type natural language dependency grammar parser
+				.when #[time fall 2013]
 			p Team of 6.
-			p A restaurant-recommending-robot. Users use typed english sentences to get information about local food.
-			p Wrote text to dependency grammar part of pileline.
+			p A restaurant-recommending robot. Users write English sentences to ask for information about local food.
+			p Wrote text to dependency grammar part of pipeline.
 			p Wrote onomasticon and lexicon as JSON data.
 			+used('scala')
 
 		details
 			summary
-				div.what
+				.what
 					a(href='//sahas3.myrpi.org/pendulum/game.php') ghost control
-				div.when #[time summer 2013]
+				.type control systems research video game
+				.when #[time summer 2013]
 			p Worked for control systems researchers.
 			p Web game that tracks user and saves/loads ghost data from server.
 			+used('canvas', 'coffeescript', 'php', 'scala')
 
 		details
 			summary
-				div.what
-					a(href="#{my('wahoo')}") wahoo game engine
-				div.when #[time fall 2012]
-			p 2D game engine featuring dynamic lighting, loose quadtree collision detection, and type-based (via reflection), state-based GameObject scripting.
+				.what
+					a(href="#{my('wahoo')}") wahoo
+				.type scala 2D game engine
+				.when #[time fall 2012]
+			p Features: dynamic lighting, loose quadtree collision detection, and type-based (via reflection), state-based GameObject scripting.
 			+used('scala', 'lwjgl')
 
 		details
 			summary
-				div.what games
-				div.when #[time 2009]-#[time 2013]
+				.what games
+				.when #[time 2009]-#[time 2013]
 
 			p #[a(href='games') Web games]
 
@@ -237,6 +242,6 @@ block content
 				li many more...
 
 			p Many small games.
-			p One game in OpenGL, one in OGRE, both with PyGame.
-			p Unfinished game in Scala engine.
+			p One game in #[+lk('opengl')], one in #[+lk('ogre')], many with #[+lk('pygame')].
+			p Unfinished game written with Wahoo.
 			+used('applet', 'pygame', 'ogre', 'canvas', 'scala', 'lwjgl')

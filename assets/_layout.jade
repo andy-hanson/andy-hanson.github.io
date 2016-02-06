@@ -19,17 +19,17 @@ html
 		block head
 	body
 		header
-			h1#name #[a(href='/') andy hanson]
+			h1#name #[a(href='/' title='home') andy hanson]
 			nav
-				mixin addr(href, iconName)
-					a(href='#{href}')
+				mixin addr(href, iconName, title)
+					a(href='#{href}' title='#{title}')
 						+icon(iconName)
-				+addr('/resume', 'file-text')
-				+addr('/games', 'gamepad')
-				a(href='//mason-lang.org') ms
-				a(href='//dum-build.org') dum
-				+addr('//github.com/andy-hanson', 'github')
-				+addr('mailto:andy.pj.hanson@gmail.com', 'envelope')
-				+addr('tel:7034022284', 'phone')
+				+addr('/resume', 'file-text', 'resume')
+				+addr('/games', 'gamepad', 'games')
+				a(href='//mason-lang.org', 'mason') ms
+				a(href='//dum-build.org', 'dum') dum
+				+addr('//github.com/andy-hanson', 'github', 'github')
+				+addr('mailto:andy.pj.hanson@gmail.com', 'envelope', 'email')
+				+addr('tel:7034022284', 'phone', 'phone')
 		main
 			block content

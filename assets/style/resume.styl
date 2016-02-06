@@ -6,25 +6,15 @@ html, body
 body > main
 	.head
 		background white
+		text-align center
 
-		display flex
+		.part
+			display inline-block
+			width 12em
 
-		> address
-			font-style normal
-			flex-grow 1
-			vertical-align middle
-
-			&#home
-				text-align center
-				p
-					margin 0
-
-			&#phone
-				text-align right
-
-			&#email, &#phone
-				// Move down half a line to vertically center with address.
-				padding-top 0.5em
+		#details-toggle
+			background #eee
+			border-radius 1em
 
 	details, table, .content
 		margin 0.5em 0
@@ -32,11 +22,6 @@ body > main
 	details
 		border-radius 0 3em 3em 0
 
-	#details-toggle
-		background #eee
-		border-color #0ff
-		border-width 2px
-		border-radius 1em
 
 	section:last-child
 		margin-bottom 0
@@ -60,6 +45,7 @@ body > main
 		.how
 			width 25%
 			font-size 0.8rem
+
 
 		.where
 			width 15%
