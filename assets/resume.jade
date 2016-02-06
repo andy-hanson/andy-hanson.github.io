@@ -6,6 +6,16 @@ block head
 	script(src='script/resume.js')
 
 block content
+
+	.head
+		address#email
+			a(href='mailto:andy.pj.hanson@gmail.com') andy.pj.hanson@gmail.com
+		address#home
+			p 1355 Creekside Dr., #112
+			p Walnut Creek, CA 94596
+		address#phone
+			a(href='tel:7034022284') (703) 402-2284
+
 	+sec('skill', 'star')
 		table
 			tr
@@ -61,7 +71,8 @@ block content
 				div.where Troy, NY
 				div.when #[time 2012]-#[time 2014]
 
-			p No degree. Planning to use a community college to fill in missing credits.
+			p Pending Bachelor of Science in Computer Science.
+			p Planning to use a community college to fill in missing credits.
 
 			h3 Selected courses
 			+inline(
@@ -117,24 +128,6 @@ block content
 		details
 			summary
 				div.what
-					a(href='//dum-build.org') dum
-				div.when #[time 2015]-
-			p Simple build system. No build script necessary.
-			p Instead of specialized plugins, uses #[+lk('jstransformers')].
-			p Completely asynchronous.
-			p Written in Mason.
-			p
-				+links('dum-build', [
-					['engine', 'dum'],
-					['web template', 'dum-web-template'],
-					['library template', 'dum-library-template'],
-					['noise maker', 'machine-that-goes-bing']
-				])
-			+used('node', 'jstransformers')
-
-		details
-			summary
-				div.what
 					a(href='//github.com/esast') esast
 				div.when #[time 2015]-
 			p Type-safe (via #[+lk('typescript')]) JavaScript AST.
@@ -148,6 +141,25 @@ block content
 					['option type', 'op']
 				])
 			+used('typescript', 'mocha', 'tslint', 'source maps')
+
+		details
+			summary
+				div.what
+					a(href='//dum-build.org') dum
+				div.when #[time 2015]-
+			p Simple build system. No build script necessary.
+			p Instead of specialized plugins, uses #[+lk('jstransformers')].
+			p Completely asynchronous.
+			p Written in Mason.
+			p Used for this site.
+			p
+				+links('dum-build', [
+					['engine', 'dum'],
+					['web template', 'dum-web-template'],
+					['library template', 'dum-library-template'],
+					['noise maker', 'machine-that-goes-bing']
+				])
+			+used('node', 'jstransformers')
 
 		details
 			summary
