@@ -4,25 +4,15 @@ body {
 }
 body > main .head {
   background: #fff;
-  display: flex;
-}
-body > main .head > address {
-  font-style: normal;
-  flex-grow: 1;
-  vertical-align: middle;
-}
-body > main .head > address#home {
   text-align: center;
 }
-body > main .head > address#home p {
-  margin: 0;
+body > main .head .part {
+  display: inline-block;
+  width: 12em;
 }
-body > main .head > address#phone {
-  text-align: right;
-}
-body > main .head > address#email,
-body > main .head > address#phone {
-  padding-top: 0.5em;
+body > main .head #details-toggle {
+  background: #eee;
+  border-radius: 1em;
 }
 body > main details,
 body > main table,
@@ -31,12 +21,6 @@ body > main .content {
 }
 body > main details {
   border-radius: 0 3em 3em 0;
-}
-body > main #details-toggle {
-  background: #eee;
-  border-color: #0ff;
-  border-width: 2px;
-  border-radius: 1em;
 }
 body > main section:last-child {
   margin-bottom: 0;
