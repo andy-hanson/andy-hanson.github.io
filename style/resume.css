@@ -6,9 +6,13 @@ body > main .head {
   background: #fff;
   text-align: center;
 }
-body > main .head .part {
+body > main .head address {
+  font-style: normal;
+  margin: 0.5em 0;
+}
+body > main .head address .part {
   display: inline-block;
-  width: 12em;
+  margin: 0 0.5em;
 }
 body > main .head #details-toggle {
   background: #eee;
