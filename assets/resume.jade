@@ -8,15 +8,13 @@ block head
 block content
 	.head
 		div
-			.part
-				a(href='tel:7034022284') (703) 402-2284
-			.part
-				a(href='mailto:andy.pj.hanson@gmail.com') andy.pj.hanson@gmail.com
+			a(href='//github.com/andy-hanson/pdf-resume/raw/master/LaTeX/Andy-Hanson.pdf') View as PDF
+		address
+			div Walnut Creek, CA — Will relocate to anywhere in USA
+			.part #[a(href='tel:7034022284') (703) 402-2284]
+			.part #[a(href='mailto:andy.pj.hanson@gmail.com') andy.pj.hanson@gmail.com]
 		div
-			.part
-				a(href='//github.com/andy-hanson/pdf-resume/raw/master/LaTeX/Andy-Hanson.pdf') View as PDF
-			.part
-				button#details-toggle Open/close all sections
+			button#details-toggle Open/close all sections
 
 	+sec('skill', 'star')
 		table
