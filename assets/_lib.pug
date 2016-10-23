@@ -2,6 +2,7 @@
 	var techLinks = {
 		ansible: '//ansible.com',
 		applet: '//en.wikipedia.org/wiki/Java_applet',
+		azure: '//azure.microsoft.com',
 		babel: '//babeljs.io',
 		bash: '//en.wikipedia.org/wiki/Bash_(Unix_shell)',
 		bower: '//bower.io',
@@ -17,6 +18,7 @@
 		coffeescript: '//coffeescript.org',
 		css: '//www.w3.org/Style/CSS',
 		DOM: '//developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model',
+		dum: '//dum-build.github.io',
 		esdoc: '//esdoc.org',
 		eslint: '//eslint.org',
 		express: '//expressjs.com',
@@ -27,15 +29,16 @@
 		gulp: '//gulpjs.com',
 		html: '//en.wikipedia.org/wiki/HTML',
 		node: '//nodejs.org',
-		jade: '//jade-lang.com',
 		java: '//www.java.com',
 		javascript: '//developer.mozilla.org/en-US/docs/Web/javascript',
 		jasmine: '//jasmine.github.io',
 		jquery: '//jquery.com',
 		jstransformers: '//github.com/jstransformers/jstransformer',
+		kotlin: '//kotlinlang.org',
 		linux: '//www.linuxmint.com',
 		lwjgl: '//lwjgl.org',
 		'mac os x': '//apple.com/osx',
+		mason: '//mason-lang.github.io',
 		mocha: '//mochajs.org',
 		naturaldocs: '//naturaldocs.org',
 		npm: '//npmjs.com',
@@ -43,6 +46,7 @@
 		ogre: '//ogre3d.org',
 		opengl: '//opengl.org',
 		php: '//php.net',
+		pug: '//pugjs.org',
 		pycharm: '//jetbrains.com/pycharm',
 		pygame: '//pygame.org',
 		pylint: '//pylint.org',
@@ -82,9 +86,9 @@
 mixin lk(name)
 	if name instanceof Array
 		- var relatedNames = name.slice(1).map(_ => `<a href='${techLink(_)}'>${_}</a>`).join(', ')
-		span #[a.lk(href='#{techLink(name[0])}')= name[0]] (!{relatedNames})
+		span #[a.lk(href=techLink(name[0]))= name[0]] (!{relatedNames})
 	else
-		a.lk(href='#{techLink(name)}')= name
+		a.lk(href=techLink(name))= name
 
 mixin lilk(name)
 	li
@@ -106,7 +110,7 @@ mixin links(...names)
 			+lilk(name)
 
 mixin icon(iconName)
-	i(class='fa fa-#{iconName}')
+	i(class=`fa fa-${iconName}`)
 
 mixin sec(name, iconName)
 	section

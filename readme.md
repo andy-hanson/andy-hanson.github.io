@@ -1,6 +1,7 @@
 ## Run
 
-	npm run serve
+	npm install
+	npm start
 
 Then see <http://localhost:8000>.
 

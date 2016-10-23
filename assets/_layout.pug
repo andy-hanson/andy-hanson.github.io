@@ -22,12 +22,12 @@ html
 			h1#name #[a(href='/' title='home') andy hanson]
 			nav
 				mixin addr(href, iconName, title)
-					a(href='#{href}' title='#{title}')
+					a(href=href title=title)
 						+icon(iconName)
 				+addr('/resume', 'file-text', 'resume')
 				+addr('/games', 'gamepad', 'games')
-				a(href='//mason-lang.org', 'mason') ms
-				a(href='//dum-build.org', 'dum') dum
+				a(href=techLinks.mason, 'mason') ms
+				a(href=techLinks.dum, 'dum') dum
 				+addr('//github.com/andy-hanson', 'github', 'github')
 				+addr('mailto:andy.pj.hanson@gmail.com', 'envelope', 'email')
 				+addr('tel:7034022284', 'phone', 'phone')
